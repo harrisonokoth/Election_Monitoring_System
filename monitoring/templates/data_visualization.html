@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Real-Time Reports</h2>
+    <canvas id="reportsChart" width="400" height="200" style="border: 1px solid black;"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Parse the reports data from Django into a JavaScript object
+        const reportData = JSON.parse('{{ reports|safe|escapejs }}');
+        console.log(reportData); // Check the data structure
+        
+        // Prepare labels and data for the chart
+        const labels = reportData.map(report => report.title); // Adjust according to your data structure
+        const data = reportData.map(report => {
+            // If date_reported is a date string, you might want to convert it to a timestamp
+            return new Date(report.date_reported).getTime(); // Example conversion
+        });
+
+        const ctx = document.getElementById('reportsChart').getContext('2d');
+        const reportsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Reports',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</div>
+{% endblock %}

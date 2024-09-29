@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Submitted Reports</h2>
+  <table>
+    <tr>
+      <th>Location</th>
+      <th>Title</th>
+      <th>Date Reported</th>
+    </tr>
+    {% for report in reports %}
+      <tr>
+        <td>{{ report.location }}</td>
+        <td>{{ report.title }}</td>
+        <td>{{ report.date_reported }}</td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No reports submitted yet.</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- monitoring/templates/submit_report_success.html -->
+
+{% load static %}  <!-- Loading static tag library -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Submitted Successfully</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">  <!-- Link to CSS file -->
+</head>
+<body>
+    <h1>Report Submitted Successfully!</h1>
+    <p>Thank you for your submission.</p>
+    <a href="{% url 'home' %}">Return to Home</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Welcome to the Election Monitoring System</h2>
+  <p>This platform allows you to submit reports on election integrity, view statistics, and stay informed about the election process.</p>
+  
+  <h3>Key Features:</h3>
+  <ul>
+    <li><strong>Submit a Report:</strong> Quickly report any irregularities or concerns regarding election integrity.</li>
+    <li><strong>View Reports:</strong> Check out previously submitted reports to understand the current landscape of election integrity.</li>
+    <li><strong>Statistics Dashboard:</strong> Access real-time statistics on reports submitted and trends over time.</li>
+    <li><strong>Community Engagement:</strong> Join discussions and forums about election integrity and learn from others.</li>
+    <li><strong>Resources:</strong> Find educational materials and links to relevant organizations advocating for fair elections.</li>
+  </ul>
+
+  <h3>Get Involved!</h3>
+  <p>Your participation is vital for ensuring a fair electoral process. We encourage all users to:</p>
+  <ul>
+    <li>Submit your own reports on any irregularities you observe.</li>
+    <li>Share this platform with others to raise awareness.</li>
+    <li>Engage in discussions and provide feedback on how to improve the election monitoring process.</li>
+  </ul>
+
+  <a href="{% url 'submit_report' %}" class="btn btn-primary">Submit a Report</a>
+  <a href="{% url 'view_reports' %}" class="btn btn-secondary">View Submitted Reports</a>
+  <a href="{% url 'statistics_dashboard' %}" class="btn btn-info">View Statistics Dashboard</a>
+
+  <footer>
+    <p>For assistance, please contact our support team at <a href="mailto:support@electionmonitoring.org">support@electionmonitoring.org</a>.</p>
+  </footer>
+{% endblock %}

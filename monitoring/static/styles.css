@@ -1,0 +1,56 @@
+/* Enhanced form styles */
+form {
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Set a max width for better layout */
+}
+
+/* Style for form inputs and textareas */
+form input, 
+form textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding for better touch targets */
+    margin-bottom: 15px; /* Adjusted margin for spacing */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* Increased font size for readability */
+    transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+form input:focus, 
+form textarea:focus {
+    border-color: #007BFF; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Increased padding for better appearance */
+    cursor: pointer;
+    font-size: 16px; /* Match button font size with input */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly scale down on click */
+}
+
+/* Accessibility enhancements */
+label {
+    font-weight: bold; /* Make labels stand out */
+    margin-bottom: 5px; /* Add spacing between label and input */
+    display: block; /* Ensures labels are on their own line */
+}
+

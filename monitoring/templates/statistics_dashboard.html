@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Statistics Dashboard</h2>
+  <p>Total Reports Submitted: {{ total_reports }}</p>
+
+  <h3>Reports by Location:</h3>
+  <ul>
+    {% for report in reports_by_location %}
+      <li>{{ report.location }}: {{ report.count }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Most Common Issues Reported:</h3>
+  <ul>
+    {% for issue in common_issues %}
+      <li>{{ issue.title }}: {{ issue.count }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Recent Reports:</h3>
+  <ul>
+    {% for report in recent_reports %}
+      <li>{{ report.title }} reported on {{ report.date_reported }} at {{ report.location }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
